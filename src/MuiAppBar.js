@@ -10,6 +10,8 @@ import Container from '@mui/material/Container';
 import Fab from '@mui/material/Fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Zoom from '@mui/material/Zoom';
+import Home from './pages/Home';
+import { Link } from 'react-router-dom';
 // import Home from './pages/Home';
 
 function ScrollTop(props) {
@@ -65,14 +67,18 @@ export default function MuiAppBar(props) {
       <AppBar>
         <Toolbar>
           <Typography variant="h6" component="div">
-            Scroll to see button
+            JINKLE PANCHOLI
           </Typography>
         </Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor" />
       <Container>
         <Box sx={{ my: 2 }}>
-   Sample
+        <Link to="/">
+        <h1 className="bookHeader">Book Search Application</h1>
+
+        </Link>
+   <Home/>
         </Box>
       </Container>
       <ScrollTop {...props}>

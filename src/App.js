@@ -1,15 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-import MuiAppBar from './MuiAppBar';
+import "./styles.css";
+import Error from "./pages/Error";
+import SingleBook from "./pages/SingleBook";
+import { BrowserRouter, Link } from "react-router-dom";
 
-function App() {
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import MuiAppBar from "./MuiAppBar";
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      <MuiAppBar/>
-      </header>
-    </div>
+    <BrowserRouter>
+    
+      <div className="header">
+      {/* <ReactAppBar/> */}
+      
+      </div>
+      <Routes>
+        <Route exact path="/" element={<MuiAppBar/>}/>
+        <Route path="/book/:id" element={<SingleBook />}/>
+        <Route path="*" element={<Error/>}/>
+
+      </Routes>
+    
+    </BrowserRouter>
   );
 }
-
-export default App;
